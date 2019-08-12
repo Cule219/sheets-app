@@ -23,50 +23,28 @@ const tableRow2Data =
     "Croatian, English"
 ]
 
-const personHead = 
-    `<tr>
-        <th>${tableHeadData[0]}</th>
-        <th>${tableHeadData[1]}</th>
-        <th>${tableHeadData[2]}</th>
-        <th>${tableHeadData[3]}</th>
-        <th>${tableHeadData[4]}</th>
-        <th>${tableHeadData[5]}</th>
-        <th>${tableHeadData[6]}</th>
-        <th>${tableHeadData[7]}</th>
-    </tr>`
-const tableRow1 = 
-    `<tr>
-        <td>${tableRow1Data[0]}</td>
-        <td>${tableRow1Data[1]}</td>
-        <td>${tableRow1Data[2]}</td>
-        <td>${tableRow1Data[3]}</td>
-        <td>${tableRow1Data[4]}</td>
-        <td>${tableRow1Data[5]}</td>
-        <td>${tableRow1Data[6]}</td>
-        <td>${tableRow1Data[7]}</td>
-    </tr>`
-
-const tableRow2 = 
-    `<tr>
-        <td>${tableRow2Data[0]}</td>
-        <td>${tableRow2Data[1]}</td>
-        <td>${tableRow2Data[2]}</td>
-        <td>${tableRow2Data[3]}</td>
-        <td>${tableRow2Data[4]}</td>
-        <td>${tableRow2Data[5]}</td>
-        <td>${tableRow2Data[6]}</td>
-        <td>${tableRow2Data[7]}</td>
-    </tr>`
-
-
-
 function fillTableHead() {
     //Fill rows with data from strings
-    //getElementsByTagName and getElementsByClassName returns array hence we have to select first element of the array
-    
-    document.getElementsByTagName('thead')[0].innerHTML += personHead;
-    document.getElementsByClassName('tbody-class')[0].innerHTML += tableRow1;
-    document.getElementById('tbody-id').innerHTML += tableRow2;
+
+    let tableHead = '';
+    for(let index = 0; index < tableHeadData.length; index++) {
+        tableHead += `<th>${tableHeadData[index]}</th>`
+    }
+    document.getElementsByTagName('thead')[0].innerHTML += `<tr>${tableHead}</tr>`
+
+    let tableRow1 = '';
+    let index = 0;
+    while(index < tableRow1Data.length) {
+        tableRow1 += `<td>${tableRow1Data[index]}</td>`
+        index++;
+    }
+    document.getElementsByClassName('tbody-class')[0].innerHTML += `<tr>${tableRow1}</tr>`;
+
+    let tableRow2 = '';
+    tableRow2Data.forEach(function(element, index) {
+        tableRow2 += `<td>${tableRow2Data[index]}</td>`
+    })
+    document.getElementById('tbody-id').innerHTML += `<tr>${tableRow2}</tr>`;
 }
 
 fillTableHead();
