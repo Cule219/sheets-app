@@ -63,9 +63,7 @@ const tableRow2 =
 function fillTableHead() {
     //Fill rows with data from strings
     //getElementsByTagName and getElementsByClassName returns array hence we have to select first element of the array
-    for(let i = 0; i < personHead.length; i++) {
-
-    }
+    
     document.getElementsByTagName('thead')[0].innerHTML += personHead;
     document.getElementsByClassName('tbody-class')[0].innerHTML += tableRow1;
     document.getElementById('tbody-id').innerHTML += tableRow2;
