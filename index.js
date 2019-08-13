@@ -1,18 +1,24 @@
 function fillTable(tableHeadData, tableRowsData) {
     //Fill thead with data from strings
+
     let tableRow = '';
     tableHeadData.forEach(function(element) {
         tableRow += `<th>${element}</th>`;
     });
-    document.getElementById('thead-person').innerHTML += `<tr>${tableRow}</tr>`
+    let thead = document.getElementById('thead-person');
+    thead.innerHTML = `<tr>${tableRow}</tr>`
 
-    //Fill tbody with data from nested array
+    //get tbody element
+    let tbody = document.getElementById('tbody-person');
+    //reset the html within it
+    tbody.innerHTML = '';
+    //load data into tbody
     tableRowsData.forEach(function(tableRowData) {
         let tableRow = '';
         tableRowData.forEach(function(element) {
             tableRow += `<td>${element}</td>`
         })
-        document.getElementById('tbody-person').innerHTML += `<tr>${tableRow}</tr>`;
+        tbody.innerHTML += `<tr>${tableRow}</tr>`;
     });
 }
 
