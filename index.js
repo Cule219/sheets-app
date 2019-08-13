@@ -113,7 +113,6 @@ const tableRowsData =
 ];
 
 function fillTable(tableHeadData, tableRowsData) {
-    console.log(tableHeadData, tableRowsData);
     //Fill thead with data from strings
     let tableRow = '';
     tableHeadData.forEach(function(element) {
