@@ -1,13 +1,10 @@
-const tableHeadData = 
-[
-    ["person", "Name", "e-mail", "Role", "Professional History", "Passions", "Favorite Books", "Spoken Languages"],
-    ["personnr", "languageHistory", "giturl", "linkedin"],
-    ["personnr", "uiFrameworks"],
-    ["personnr", "personnr", "gitrepository", "projecttitle", "stack", "otherCreatores"]
-];
+
 const tableRowsData = 
 [
-    [
+    [   
+        [
+            "person", "Name", "e-mail", "Role", "Professional History", "Passions", "Favorite Books", "Spoken Languages"
+        ],
         [
             "Pe00001",
             "Patrick",
@@ -51,6 +48,9 @@ const tableRowsData =
     ],
     [
         [
+            "personnr", "languageHistory", "giturl", "linkedin"
+        ],
+        [
             "Pe00001",
             "Basic, C, C++, Java, JavaScript, PHP, VisualBasic, C#, Ruby, Typescript",
             "https://github.com/patrickweiss",
@@ -77,6 +77,9 @@ const tableRowsData =
     ],
     [
         [
+            "personnr", "uiFrameworks"
+        ],
+        [
             "Pe00001",
             "jQuery, Polymer, Angular, React, Vue"
         ],
@@ -94,6 +97,9 @@ const tableRowsData =
         ]
     ],
     [
+        [
+            "personnr", "personnr", "gitrepository", "projecttitle", "stack", "otherCreatores"
+        ],
         [
             "Pr00001",
             "Pe00003",

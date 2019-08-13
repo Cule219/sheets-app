@@ -1,8 +1,8 @@
-function fillTable(tableHeadData, tableRowsData) {
+function fillTable(tableRowsData) {
     //Fill thead with data from strings
 
     let tableRow = '';
-    tableHeadData.forEach(function(element) {
+    tableRowsData[0].forEach(function(element) {
         tableRow += `<th>${element}</th>`;
     });
     let thead = document.getElementById('thead-person');
@@ -13,7 +13,7 @@ function fillTable(tableHeadData, tableRowsData) {
     //reset the html within it
     tbody.innerHTML = '';
     //load data into tbody
-    tableRowsData.forEach(function(tableRowData) {
+    tableRowsData.slice(1).forEach(function(tableRowData) {
         let tableRow = '';
         tableRowData.forEach(function(element) {
             tableRow += `<td>${element}</td>`
@@ -22,28 +22,4 @@ function fillTable(tableHeadData, tableRowsData) {
     });
 }
 
-fillTable(tableHeadData[0], tableRowsData[0]);
-
-
-// Use this code for Google Docs, Slides, Forms, or Sheets.
-function onOpen() {
-  SpreadsheetApp.getUi() // Or DocumentApp or SlidesApp or FormApp.
-      .createMenu('MediaMarktSaturn')
-      .addItem('CodeWarriors', 'openDialog')
-      .addToUi();
-}
-
-function doGet() {
-  return HtmlService.createHtmlOutputFromFile('index');
-}
-
-
-function openDialog() {
-  var html = HtmlService.createHtmlOutputFromFile('index');
-  SpreadsheetApp.getUi() // Or DocumentApp or SlidesApp or FormApp.
-      .showModalDialog(html, '@mediamarktsaturn.com');
-}
-
-function getData(){
-  return SpreadsheetApp.getActive().getSheetByName("Person").getDataRange().getValues();
-}
+fillTable(tableRowsData[0]);
