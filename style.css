@@ -16,12 +16,18 @@ button {
     font-size: 16px;
     margin: 5px 0;
 }
+/*This will define new styles for different screen sizes*/
 @media screen and (max-width: 720px) {
     #container {
         flex-wrap: wrap;
     }
     #container div{
         width: 30%;
+    }
+}
+@media screen and (max-width: 600px) {
+    #container div{
+        width: 40%;
     }
 }
 @media screen and (max-width: 500px) {
