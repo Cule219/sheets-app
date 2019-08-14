@@ -1,22 +1,12 @@
-function fillTable(tableRowsData) {
-    //Fill thead with data from strings
-    var tableRow = '';
-    tableRowsData[0].forEach(function (element) {
-        tableRow += "<th>" + element + "</th>";
-    });
-    var thead = document.getElementById('thead-person');
-    thead.innerHTML = "<tr>" + tableRow + "</tr>";
-    //get tbody element
-    var tbody = document.getElementById('tbody-person');
-    //reset the html within it
-    tbody.innerHTML = '';
-    //load data into tbody
-    tableRowsData.slice(1).forEach(function (tableRowData) {
-        var tableRow = '';
-        tableRowData.forEach(function (element) {
-            tableRow += "<td>" + element + "</td>";
-        });
-        tbody.innerHTML += "<tr>" + tableRow + "</tr>";
+function fillTable(divsData) {
+    var container = document.getElementById('container');
+    container.innerHTML = '';
+    divsData.slice(1).forEach(function (divData) {
+        var divText = "";
+        for (var i = 0; i < divData.length; i++) {
+            divText += "<p>" + divsData[0][i] + ": " + divData[i] + "</p></br>";
+        }
+        container.innerHTML += "<div>" + divText + "</div>";
     });
 }
 fillTable(tableRowsData[0]);

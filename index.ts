@@ -1,24 +1,16 @@
-function fillTable(tableRowsData: Array<any>) {
-    //Fill thead with data from strings
+function fillTable(divsData: Array<any>) {
+    //getting the container div
+    let container: Element = document.getElementById('container');
+    //reseting any elements that are in the container
+    container.innerHTML = '';
 
-    let tableRow: string = '';
-    tableRowsData[0].forEach(function(element) {
-        tableRow += `<th>${element}</th>`;
-    });
-    let thead: Element = document.getElementById('thead-person');
-    thead.innerHTML = `<tr>${tableRow}</tr>`
-
-    //get tbody element
-    let tbody: Element = document.getElementById('tbody-person');
-    //reset the html within it
-    tbody.innerHTML = '';
-    //load data into tbody
-    tableRowsData.slice(1).forEach(function(tableRowData) {
-        let tableRow: string = '';
-        tableRowData.forEach(function(element) {
-            tableRow += `<td>${element}</td>`
-        })
-        tbody.innerHTML += `<tr>${tableRow}</tr>`;
+    //loading container div with data
+    divsData.slice(1).forEach(function(divData) {
+        let divText: string = ``;
+        for(let i = 0; i < divData.length; i++) {
+            divText += `<p>${divsData[0][i]}: ${divData[i]}</p></br>`;
+        }
+        container.innerHTML += `<div>${divText}</div>`;
     });
 }
 
