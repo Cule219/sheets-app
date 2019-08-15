@@ -1,4 +1,4 @@
-const tableRowsData = 
+export const tableRowsData = 
 [
     [   
         [

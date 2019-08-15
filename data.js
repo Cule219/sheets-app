@@ -1,4 +1,6 @@
-var tableRowsData = [
+"use strict";
+exports.__esModule = true;
+exports.tableRowsData = [
     [
         [
             "person", "Name", "e-mail", "Role", "Professional History", "Passions", "Favorite Books", "Spoken Languages"
