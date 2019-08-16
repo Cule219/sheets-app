@@ -1,4 +1,3 @@
-import {tableRowsData} from './data.js';
 //class Person with getter and setter
 class Person {
     /*private indicates that these field can only be altered and accessed from 
@@ -47,5 +46,5 @@ function fillTable(divsData: Array<any>) {
     });
 }
 
-const person = new Person(tableRowsData[0][1])
-fillTable(person.getPersonInfo());
+const persons = tableRowsData[0].map(x => new Person(x).getPersonInfo());
+fillTable(persons);

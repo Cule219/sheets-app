@@ -1,6 +1,3 @@
-"use strict";
-exports.__esModule = true;
-var data_js_1 = require("./data.js");
 //class Person with getter and setter
 var Person = /** @class */ (function () {
     function Person(array) {
@@ -37,5 +34,6 @@ function fillTable(divsData) {
         container.innerHTML += "<div>" + divText + "</div>";
     });
 }
-var person = new Person(data_js_1.tableRowsData[0][1]);
-fillTable(person.getPersonInfo());
+var persons = tableRowsData[0].map(function (x) { return new Person(x).getPersonInfo(); });
+fillTable(persons);
+console.log(persons);
